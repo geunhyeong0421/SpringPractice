@@ -95,7 +95,7 @@ $(document).ready(function(){
 		}
 		else if(operation === "list"){
 			formObj.attr("action", "/board/list").attr("method","get");
-			fromObj.empty();
+			formObj.empty();
 		}
 		
 		formObj.submit();

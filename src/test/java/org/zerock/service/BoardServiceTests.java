@@ -5,7 +5,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.zerock.domain.BoardVO;
+import org.zerock.domain.Criteria;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
@@ -34,28 +34,29 @@ public class BoardServiceTests {
 //		
 //		log.info("생성된 게시물의 번호: " + board.getBno());
 //	}
-//	@Test
-//	public void testGetList() {
+	@Test
+	public void testGetList() {
 //		service.getList().forEach(board->log.info(board));
-//	}
+		service.getList(new Criteria(2,10)).forEach(board->log.info(board));
+	}
 //	@Test
 //	public void testGet() {
 //		log.info(service.get(23L));
 //	}
-	@Test
-	public void testDelete() {
-		log.info("REMOVE RESULT: " + service.remove(21L));
-	}
-	@Test
-	public void testUpdate() {
-		BoardVO board = service.get(25L);
-		
-		if(board == null) {
-			return;
-		}
-		board.setWriter("geunhyeong0421");
-		log.info("MODIFY RESULT: " + service.modify(board));
-	}
+//	@Test
+//	public void testDelete() {
+//		log.info("REMOVE RESULT: " + service.remove(21L));
+//	}
+//	@Test
+//	public void testUpdate() {
+//		BoardVO board = service.get(25L);
+//		
+//		if(board == null) {
+//			return;
+//		}
+//		board.setWriter("geunhyeong0421");
+//		log.info("MODIFY RESULT: " + service.modify(board));
+//	}
 	
 
 }
