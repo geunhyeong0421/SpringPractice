@@ -43,14 +43,14 @@ public class ReplyMapperTests {
 //		log.info(mapper);
 //	}
 //	
-	@Test
-	public void testRead() {
-		Long targetRno = 9L;
-		
-		ReplyVO vo = mapper.read(targetRno);
-		
-		log.info(vo);
-	}
+//	@Test
+//	public void testRead() {
+//		Long targetRno = 9L;
+//		
+//		ReplyVO vo = mapper.read(targetRno);
+//		
+//		log.info(vo);
+//	}
 //	
 //	@Test
 //	public void testDelete() {
@@ -82,5 +82,13 @@ public class ReplyMapperTests {
 //		replies.forEach(reply -> log.info(reply));
 //		
 //	}
+	@Test
+	public void testList2() {
+		Criteria cri = new Criteria(2, 10);
+		
+		List<ReplyVO> replies = mapper.getListWithPaging(cri, 2228260L);
+		
+		replies.forEach(reply -> log.info(reply));
+	}
 
 }
