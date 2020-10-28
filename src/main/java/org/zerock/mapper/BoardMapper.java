@@ -2,6 +2,7 @@ package org.zerock.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
 import org.zerock.domain.BoardVO;
 import org.zerock.domain.Criteria;
 
@@ -26,5 +27,8 @@ public interface BoardMapper {
 	
 	// p.331 테스트 - and가 왜 생략되는지 알 수 없음..
 //	public BoardVO test(Long bno);
+	
+	
+	public void updateReplyCnt(@Param("bno") Long bno, @Param("amount") int amount);
 	
 }
