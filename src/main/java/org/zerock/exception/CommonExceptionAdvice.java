@@ -13,7 +13,7 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 public class CommonExceptionAdvice {
 	
-	@ExceptionHandler(Exception.class)
+//	@ExceptionHandler(Exception.class)
 	public String except(Exception ex, Model model) {
 		
 		log.error("Exception......." + ex.getMessage());
